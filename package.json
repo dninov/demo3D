@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "keywords": [],
-  "homepage": " https://dninov.github.io/demo3D/",
+  "homepage": "https://dninov.github.io/demo3D/",
   "main": "src/index.js",
   "dependencies": {
     "lerp": "^1.0.3",

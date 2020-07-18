@@ -44,7 +44,8 @@ function Number({ mouse, hover }) {
     if (ref.current) {
       ref.current.position.x = lerp(ref.current.position.x, mouse.current[0] / aspect / 10, 0.1)
       ref.current.rotation.x = lerp(ref.current.rotation.x, 0 + mouse.current[1] / aspect / 50, 0.1)
-      ref.current.rotation.y = 0.5
+      ref.current.rotation.y = lerp(ref.current.position.y, mouse.current[0] / aspect / 10, 0.1)
+      ref.current.rotation.y = lerp(ref.current.rotation.y, 0 + mouse.current[1] / aspect / 50, 0.1)
     }
   })
   return (
@@ -55,9 +56,9 @@ function Number({ mouse, hover }) {
           onClick={e => window.open('https://github.com/react-spring/react-three-fiber/blob/master/whatsnew.md', '_blank')}
           onPointerOver={() => hover(true)}
           onPointerOut={() => hover(false)}>
-          NINOV
+          NINO
         </Text>
-        <ReactAtom position={[35, -20, 0]} scale={[1, 0.5, 1]} />
+        {/* <ReactAtom position={[35, -20, 0]} scale={[1, 0.5, 1]} /> */}
       </group>
     </Suspense>
   )
@@ -88,7 +89,7 @@ function App() {
         gl.setClearColor(new THREE.Color('#020207'))
       }}>
       <fog attach="fog" args={['white', 50, 190]} />
-      <pointLight distance={100} intensity={4} color="white" />
+      <pointLight distance={100} intensity={2} color="white" />
       <Number mouse={mouse} hover={hover} />
       <Particles count={isMobile ? 5000 : 10000} mouse={mouse} />
       <Sparks count={20} mouse={mouse} colors={['#A2CCB6', '#FCEEB5', '#EE786E', '#e0feff', 'lightpink', 'lightblue']} />

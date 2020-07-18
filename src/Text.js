@@ -16,7 +16,7 @@ const Text = forwardRef(({ children, vAlign = 'center', hAlign = 'center', size 
     [children]
   )
   return (
-    <group ref={ref} {...props} scale={[0.1 * size, 0.1 * size, 0.5]}>
+    <group ref={ref} {...props} scale={[0.1 * size, 0.1 * size, 0.3]}>
       <mesh ref={mesh}>
         <textGeometry attach="geometry" args={[children, config]} />
         <meshNormalMaterial attach="material" />
